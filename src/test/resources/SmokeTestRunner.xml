@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite
+        name="Smoke tests"
+        verbose="0"
+        parallel="tests"
+        thread-count="15"
+        data-provider-thread-count="15"
+        configfailurepolicy="continue">
+
+    <test name="Smoke Tests Chrome" >
+        <parameter name="browser" value="chrome"/>
+        <parameter name="platform" value="WIN11"/>
+        <!-- root folder of the feature files: -->
+        <parameter name="cucumber.features" value="src/test/resources/features"/>
+
+        <!-- root folder of the step definitions: -->
+        <parameter name="cucumber.glue" value="org/selenium_cucumber/stepdefinitions"/>
+
+        <parameter name="cucumber.filter.tags" value="@SmokeTests"/>
+        <classes>
+            <!-- the runner class: -->
+            <class name="org.selenium_cucumber.runner.CucumberRunnerTests" />
+        </classes>
+    </test>
+    <test name="Smoke Tests Firefox" >
+        <parameter name="browser" value="firefox"/>
+        <parameter name="platform" value="WIN11"/>
+        <!-- root folder of the feature files: -->
+        <parameter name="cucumber.features" value="src/test/resources/features"/>
+
+        <!-- root folder of the step definitions: -->
+        <parameter name="cucumber.glue" value="org/selenium_cucumber/stepdefinitions"/>
+
+        <parameter name="cucumber.filter.tags" value="@SmokeTests"/>
+        <classes>
+            <!-- the runner class: -->
+            <class name="org.selenium_cucumber.runner.CucumberRunnerTests" />
+        </classes>
+    </test>
+    <test name="Smoke Tests Microsoft Edge" >
+        <parameter name="browser" value="MicrosoftEdge"/>
+        <parameter name="platform" value="WIN11"/>
+        <!-- root folder of the feature files: -->
+        <parameter name="cucumber.features" value="src/test/resources/features"/>
+
+        <!-- root folder of the step definitions: -->
+        <parameter name="cucumber.glue" value="org/selenium_cucumber/stepdefinitions"/>
+
+        <parameter name="cucumber.filter.tags" value="@SmokeTests"/>
+        <classes>
+            <!-- the runner class: -->
+            <class name="org.selenium_cucumber.runner.CucumberRunnerTests" />
+        </classes>
+    </test>
+</suite>

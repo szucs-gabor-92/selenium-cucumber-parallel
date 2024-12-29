@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite configfailurepolicy="continue" thread-count="15" parallel="tests" data-provider-thread-count="15" name="Failed suite [Smoke tests]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="15" parallel="tests" name="Smoke Tests Chrome(failed)" verbose="0">
+    <parameter name="cucumber.features" value="src/test/resources/features"/>
+    <parameter name="cucumber.filter.tags" value="@SmokeTests"/>
+    <parameter name="browser" value="chrome"/>
+    <parameter name="cucumber.glue" value="org/selenium_cucumber/stepdefinitions"/>
+    <parameter name="platform" value="WIN11"/>
+    <classes>
+      <class name="org.selenium_cucumber.runner.CucumberRunnerTests">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="tearDownClass"/>
+          <include name="runScenario" invocation-numbers="7"/>
+        </methods>
+      </class> <!-- org.selenium_cucumber.runner.CucumberRunnerTests -->
+    </classes>
+  </test> <!-- Smoke Tests Chrome(failed) -->
+  <test thread-count="15" parallel="tests" name="Smoke Tests Microsoft Edge(failed)" verbose="0">
+    <parameter name="cucumber.features" value="src/test/resources/features"/>
+    <parameter name="cucumber.filter.tags" value="@SmokeTests"/>
+    <parameter name="browser" value="MicrosoftEdge"/>
+    <parameter name="cucumber.glue" value="org/selenium_cucumber/stepdefinitions"/>
+    <parameter name="platform" value="WIN11"/>
+    <classes>
+      <class name="org.selenium_cucumber.runner.CucumberRunnerTests">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="tearDownClass"/>
+          <include name="runScenario" invocation-numbers="7"/>
+        </methods>
+      </class> <!-- org.selenium_cucumber.runner.CucumberRunnerTests -->
+    </classes>
+  </test> <!-- Smoke Tests Microsoft Edge(failed) -->
+  <test thread-count="15" parallel="tests" name="Smoke Tests Firefox(failed)" verbose="0">
+    <parameter name="cucumber.features" value="src/test/resources/features"/>
+    <parameter name="cucumber.filter.tags" value="@SmokeTests"/>
+    <parameter name="browser" value="firefox"/>
+    <parameter name="cucumber.glue" value="org/selenium_cucumber/stepdefinitions"/>
+    <parameter name="platform" value="WIN11"/>
+    <classes>
+      <class name="org.selenium_cucumber.runner.CucumberRunnerTests">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="tearDownClass"/>
+          <include name="runScenario" invocation-numbers="7"/>
+        </methods>
+      </class> <!-- org.selenium_cucumber.runner.CucumberRunnerTests -->
+    </classes>
+  </test> <!-- Smoke Tests Firefox(failed) -->
+</suite> <!-- Failed suite [Smoke tests] -->
